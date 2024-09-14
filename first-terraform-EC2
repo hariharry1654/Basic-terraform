@@ -23,7 +23,7 @@ resource "aws_instance" "example" {
   # Optional: Add a block for user data to configure the instance on launch
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello,Harry!" > /home/ec2-user/hello.txt
+              echo "Hello,Harry! hii" > /home/ec2-user/hello.txt
               EOF
 
   # Optional: Associate an Elastic IP with the instance
