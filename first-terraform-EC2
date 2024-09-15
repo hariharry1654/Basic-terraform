@@ -9,7 +9,7 @@ resource "aws_instance" "simple" {
   instance_type = "t2.micro"  # Choose the instance type you need
 
   tags = {
-    Name = "Basic-Terraform-Instance"
+    Name = "Second-Terraform-Instance"
   }
 
   # Optional: Add a key pair if you want to SSH into the instance
