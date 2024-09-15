@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 # Define the EC2 instance
-resource "aws_instance" "example" {
+resource "aws_instance" "simple" {
   ami           = "ami-0583d8c7a9c35822c"  # Replace with a valid AMI ID for your region
   instance_type = "t2.micro"  # Choose the instance type you need
 
@@ -13,17 +13,17 @@ resource "aws_instance" "example" {
   }
 
   # Optional: Add a key pair if you want to SSH into the instance
-  key_name = "my-key-pair"  # Replace with your key pair name
+  key_name = "Hari1"  # Replace with your key pair name
 
   # Optional: Add a security group if you want to control access
   vpc_security_group_ids = [
-    "sg-0123456789abcdef0"  # Replace with your security group ID
+    "sg-0f8ec53f4a6257ee0"  # Replace with your security group ID
   ]
 
   # Optional: Add a block for user data to configure the instance on launch
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello,Harry! hii" > /home/ec2-user/hello.txt
+              echo "Hello,Harry! hii" > /local/hello.txt
               EOF
 
   # Optional: Associate an Elastic IP with the instance
@@ -32,5 +32,5 @@ resource "aws_instance" "example" {
 
 # Define an output variable to show the instance public IP
 output "instance_ip" {
-  value = aws_instance.example.public_ip
+  value = aws_instance.simple.public_ip
 }
